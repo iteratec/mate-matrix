@@ -139,7 +139,7 @@ byte buffer[100];
 // active sentenses
 char string1[] = " iteratec Freiday rocks!   ";
 char string2[] = " follow @iteratec for more    ";
-char string3[] = "y";
+char string3[] = "works    ";
 
 // just for tests
 char string7[] = " A B C D E F G H I J K L M N O P Q R S T U V X W Y Z ";
@@ -147,39 +147,6 @@ char string8[] = " a b c d e f g h i j k l m n o p q r s t u v x w y z ";
 char string9[] = " 1 2 3 4 5 6 7 8 9 0 - = ";
 char string10[] = " ! @ # $ % ¨ & * ( ) _ + ";
 char string11[] = " ' , . ; ~ ] ´ [ | < > : ^ } ` { / ?  ";
-
-
-
-void setup(){
-  m.init(); // module initialize
-  m.setIntensity(15); // dot matix intensity 0-15
-  Serial.begin(9600); // serial communication initialize
-}
-
-void loop(){
-  /*
-  // this is the code if you want to entering a message via serial console
-  while (Serial.available() > 0){
-    byte c = Serial.read();
-    Serial.println(c, DEC);
-    printCharWithShift(c, 100);
-  }
-  delay(100);
-  m.shiftLeft(false, true);
-  */
-  
-  // print the active sentences
-  //printStringWithShift(string1, 80);
-  //printStringWithShift(string2, 100);
-  printStringWithShift(string3, 150);
-
-  // print sentences just for tests
-  //printStringWithShift(string7, 100);
-  //printStringWithShift(string8, 100);
-  //printStringWithShift(string9, 100);
-  //printStringWithShift(string10, 100);
-  //printStringWithShift(string11, 100);
-}
 
 void printCharWithShift(char c, int shift_speed){
   if (c < 32) return;
@@ -200,4 +167,35 @@ void printStringWithShift(char* s, int shift_speed){
     printCharWithShift(*s, shift_speed);
     s++;
   }
+}
+
+void setup(){
+  m.init(); // module initialize
+  m.setIntensity(3); // dot matix intensity 0-15
+  Serial.begin(9600); // serial communication initialize
+}
+
+void loop(){
+  /*
+  // this is the code if you want to entering a message via serial console
+  while (Serial.available() > 0){
+    byte c = Serial.read();
+    Serial.println(c, DEC);
+    printCharWithShift(c, 100);
+  }
+  delay(100);
+  m.shiftLeft(false, true);
+  */
+  
+  // print the active sentences
+  //printStringWithShift(string1, 80);
+  //printStringWithShift(string2, 100);
+  printStringWithShift(string3, 70);
+
+  // print sentences just for tests
+  //printStringWithShift(string7, 100);
+  //printStringWithShift(string8, 100);
+  //printStringWithShift(string9, 100);
+  //printStringWithShift(string10, 100);
+  //printStringWithShift(string11, 100);
 }
