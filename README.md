@@ -10,4 +10,25 @@ This Project is a Freiday Project initiated for the [HackerSchool](http://hacker
 
 You can open up the matematrix.ino file in your Arduino IDE. After that you can flash it onto an Arduino Chip connected via USB.
 
+### Build and Upload using make
+
+If you prefer not to use the Arduino IDE you can build the software using [make](https://de.wikipedia.org/wiki/Make). You have to install the [Arduino-Makefile](https://github.com/sudar/Arduino-Makefile) support.
+
+    sudo apt-get install arduino-mk
+
+After that you will be able to build the software with
+
+    make
+
+In order to flash the software onto the arduino chip you have to issue
+
+    make upload
+
+Note that you might have to adapt some of the make variables based on your system:
+
+    ARDUINO_DIR – Directory where Arduino is installed
+    ARDMK_DIR – Directory where you have copied the makefile (you may not need this)
+    AVR_TOOLS_DIR – Directory where avr tools are installed (you may not need this)
+	ARDUINO_PORT – The port or device where the microcontroller is connected
+
 ![Ongoing Development Snapshot](img/matematrix.jpg)
