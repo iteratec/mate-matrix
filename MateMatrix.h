@@ -7,26 +7,21 @@
 #define _MateMatrix_H_
 
 #include "Arduino.h"
+#include "MaxMatrix.h"
+ 
+/**
+ * Creates and initializes a new Matrix instance
+ */
+void initMateMatrix();
 
-class MateMatrix
-{
- public:
-  /**
-   * Creates and initializes a new Matrix instance
-   */
-  MateMatrix();
+/**
+ * Blanks out all of the matrix's LEDs
+ */
+void clearMatrix();
 
-  /**
-   * Blanks out all of the matrix's LEDs
-   */
-  void clear();
+/**
+ * Displays a frame on the matrix
+ */
+void displayFrame(byte columns[]);
 
-  /**
-   * Displays a frame on the matrix
-   */
-  void displayFrame(byte columns[]);
-
-};
 #endif
-
-

@@ -4,20 +4,36 @@
  */
 
 #include "Arduino.h"
+#include <binary.h>
 #include "MateMatrix.h"
-#include "MaxMatrix.h"
+#include "LedControl.h"
 
-//int data = 8;    // DIN pin of MAX7219 module
-//int load = 9;    // CS pin of MAX7219 module
-//int clock = 10;  // CLK pin of MAX7219 module
+int dataPin = 8;    // DIN pin of MAX7219 module
+int chipSelectPin = 9;    // CS pin of MAX7219 module
+int clockPin = 10;  // CLK pin of MAX7219 module
 
-//int maxInUse = 2;    //change this variable to set how many MAX7219's you'll use
+LedControl lc = LedControl(dataPin, clockPin, chipSelectPin, 1);
 
-//MaxMatrix m(data, load, clock, maxInUse); // define module
+void initMateMatrix() {
+  int ledBrightness = 3; // dot matix intensity 0-15
+  for(int index=0; index<lc.getDeviceCount(); index++) {
+    lc.shutdown(index, false); // disable auto shutdown
+    lc.setScanLimit(index, 7); // use all digits
+    lc.setIntensity(index, ledBrightness); // set brightness
+  }
+}
 
-MateMatrix::MateMatrix() 
-{
-  //  m.init(); // module initialize
-  //  m.setIntensity(3); // dot matix intensity 0-15
+void clearMatrix(){
+  Serial.println("clearing matrix");
+  for(int index=0; index < lc.getDeviceCount(); index++){
+    lc.clearDisplay(index);
+  }
+}
+
+void displayFrame(byte columns[]){
+  Serial.println("displaying frame");
+  for(int i = 0; i<8; i++){
+    lc.setColumn(0, i, columns[i]);
+  }
 }
 

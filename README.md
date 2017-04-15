@@ -31,4 +31,8 @@ Note that you might have to adapt some of the make variables based on your syste
     AVR_TOOLS_DIR – Directory where avr tools are installed (you may not need this)
 	ARDUINO_PORT – The port or device where the microcontroller is connected
 
+## Library internals
+
+We use the LedControl Library and provide a facade for it. The library is available via [Github](https://github.com/wayoda/LedControl). Documentation can be found on [the libraries Adruino Playgroud page](http://playground.arduino.cc/Main/LedControl)
+
 ![Ongoing Development Snapshot](img/matematrix.jpg)
