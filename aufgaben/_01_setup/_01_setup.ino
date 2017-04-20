@@ -6,12 +6,23 @@
 #include "MateMatrix.h"
 #include <avr/pgmspace.h>
 
+byte up2[] = {
+  B00011000,
+  B00111100,
+  B01111110,
+  B00011000,
+  B00011000,
+  B01111110,
+  B00111100,
+  B00011000
+};
+
 byte up[] = {
   B00011000,
   B00111100,
   B01111110,
-  B11011011,
-  B10011001,
+  B00011000,
+  B00011000,
   B00011000,
   B00011000,
   B00011000
@@ -20,11 +31,9 @@ byte up[] = {
 void setup(){
   Serial.begin(9600); // serial communication initialize
   initialisiereMatrix();
+  zeigeBild(up);
 }
 
 void loop(){
-  schalteMatrixAus();
-  delay(1000);
-  zeigeBild(up);
-  delay(1000);
+
 }

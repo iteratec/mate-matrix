@@ -1,0 +1,2 @@
+a) zeige den pfeil an.
+b) drehe den pfeil um.
