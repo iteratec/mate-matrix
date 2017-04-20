@@ -23,4 +23,13 @@ void schalteMatrixAus();
  */
 void zeigeBild(byte columns[]);
 
+/**
+ * concatenate the new matrix with the old one and save and show the result
+ */
+void speichereBild(byte columns[]);
+
+/**
+ * displays the internally saved matrix
+ */
+void zeigeGespeichertesBild();
 #endif
