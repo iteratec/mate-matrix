@@ -38,4 +38,16 @@ We use the LedControl Library and provide a facade for it. The library is availa
 ## Serial communication
 You can read the serial output and send input to the arduino as described [in this blogpost](http://playground.arduino.cc/Interfacing/LinuxTTY)
 
+On Linux, you can do the following, assuming `/dev/ttyACM0` is your serial device and `9600` is the baud rate:
+
+    sudo stty -F /dev/ttyACM0 cs8 9600 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts
+
+Then you can connect to the serial port via `screen`:
+
+    sudo screen /dev/ttyACM0 9600
+
+Every input key will be sent to the arduino.
+
+
+
 ![Ongoing Development Snapshot](img/matematrix.jpg)
