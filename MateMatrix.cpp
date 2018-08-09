@@ -45,11 +45,18 @@ void messeFPS(){
   }
 }
 
+byte reverse(byte b) {
+   b = (b & 0xF0) >> 4 | (b & 0x0F) << 4;
+   b = (b & 0xCC) >> 2 | (b & 0x33) << 2;
+   b = (b & 0xAA) >> 1 | (b & 0x55) << 1;
+   return b;
+}
+
 void zeigeBild(byte columns[]){
   Serial.println("displaying frame");
   messeFPS();
   for(int i = 0; i<8; i++){
-    lc.setColumn(0, i, columns[i]);
+    lc.setColumn(0, i, reverse(columns[i]));
   }
 }
 
