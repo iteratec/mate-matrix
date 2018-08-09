@@ -36,9 +36,12 @@ void setup(){
 void loop(){
   schalteMatrixAus();
   delay(1000);
-  zeigeBild(up);
+  if (leseZeichen() == 'R') {
+    zeigeBild(up);
+    delay(1000);
+  }
+  zeigeBild(smilie);
   delay(1000);
-
   //  clearMatrix();
   //delay(1000);
   //displayFrame(up);

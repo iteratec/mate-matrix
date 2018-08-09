@@ -53,4 +53,10 @@ void zeigeBild(byte columns[]){
   }
 }
 
+char leseZeichen() {
+  if (Serial.available()) {
+   return Serial.read();
+  }
+  return 0;
+}
 

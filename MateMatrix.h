@@ -7,6 +7,11 @@
 #define _MateMatrix_H_
 
 #include "Arduino.h"
+
+/**
+ * read serial input
+ */
+char leseZeichen();
  
 /**
  * Creates and initializes a new Matrix instance
