@@ -35,4 +35,7 @@ Note that you might have to adapt some of the make variables based on your syste
 
 We use the LedControl Library and provide a facade for it. The library is available via [Github](https://github.com/wayoda/LedControl). Documentation can be found on [the libraries Adruino Playgroud page](http://playground.arduino.cc/Main/LedControl)
 
+## Serial communication
+You can read the serial output and send input to the arduino as described [in this blogpost](http://playground.arduino.cc/Interfacing/LinuxTTY)
+
 ![Ongoing Development Snapshot](img/matematrix.jpg)
