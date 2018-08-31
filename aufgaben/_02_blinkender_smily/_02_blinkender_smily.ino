@@ -23,8 +23,5 @@ void setup(){
 }
 
 void loop(){
-  schalteMatrixAus();
-  delay(1000);
-  zeigeBild(up);
-  delay(1000);
+
 }
