@@ -30,8 +30,6 @@ byte up[] = {
 
 void setup(){
   Serial.begin(9600); // serial communication initialize
-  initialisiereMatrix();
-  zeigeBild(up);
 }
 
 void loop(){

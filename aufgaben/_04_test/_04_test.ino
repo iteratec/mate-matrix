@@ -67,24 +67,5 @@ void setup(){
 }
 
 void loop(){
-  schalteMatrixAus();
-  speichereBild(smily);
-  speichereBild(rahmen1);
-  zeigeGespeichertesBild();
-  delay(500);
-  schalteMatrixAus();
-  speichereBild(smily);
-  speichereBild(rahmen2);
-  zeigeGespeichertesBild();
-  delay(500);
-  schalteMatrixAus();
-  speichereBild(smily);
-  speichereBild(rahmen3);
-  zeigeGespeichertesBild();
-  delay(500);
-  schalteMatrixAus();
-  speichereBild(smily);
-  speichereBild(rahmen4);
-  zeigeGespeichertesBild();
-  delay(500);
+
 }
