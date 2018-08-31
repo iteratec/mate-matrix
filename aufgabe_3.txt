@@ -1,0 +1,1 @@
+Zeige abwechselnd den Stern und den Smiley an
