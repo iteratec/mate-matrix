@@ -34,8 +34,5 @@ void setup(){
 }
 
 void loop(){
-  delay(1000);
-  zeigeBild(stern);
-  delay(1000);
-  zeigeBild(smily);
+
 }
