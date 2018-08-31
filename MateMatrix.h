@@ -7,11 +7,6 @@
 #define _MateMatrix_H_
 
 #include "Arduino.h"
-
-/**
- * read serial input
- */
-char leseZeichen();
  
 /**
  * Creates and initializes a new Matrix instance
@@ -28,4 +23,13 @@ void schalteMatrixAus();
  */
 void zeigeBild(byte columns[]);
 
+/**
+ * concatenate the new matrix with the old one and save and show the result
+ */
+void speichereBild(byte columns[]);
+
+/**
+ * displays the internally saved matrix
+ */
+void zeigeGespeichertesBild();
 #endif

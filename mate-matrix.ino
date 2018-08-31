@@ -6,59 +6,59 @@
 #include "MateMatrix.h"
 #include <avr/pgmspace.h>
 
-byte up[] = {
-  B00011000,
-  B00111100,
-  B01111110,
-  B11011011,
-  B10011001,
-  B00011000,
-  B00011000,
-  B00011000
+byte rahmen1[] = {
+  B11001100,
+  B00000001,
+  B00000001,
+  B10000000,
+  B10000000,
+  B00000001,
+  B00000001,
+  B11001100
 };
 
-byte left[] = {
-  B00011000,
-  B00111000,
-  B01110000,
-  B11111111,
-  B11111111,
-  B01110000,
-  B00111000,
-  B00011000
-};
-
-byte down[] = {
-  B00011000,
-  B00011000,
-  B00011000,
-  B10011001,
-  B11011011,
-  B01111110,
-  B00111100,
-  B00011000
-};
-
-byte right[] = {
-  B00011000,
-  B00011100,
-  B00001110,
-  B11111111,
-  B11111111,
-  B00001110,
-  B00011100,
-  B00011000
-};
-
-byte smilie[] = {
-  B00000000,
-  B01000111,
-  B01000111,
-  B00000000,
-  B00000000,
-  B11000011,
+byte rahmen2[] = {
   B01100110,
-  B00111100
+  B00000000,
+  B10000001,
+  B10000001,
+  B00000000,
+  B00000000,
+  B10000001,
+  B10011001
+};
+
+byte rahmen3[] = {
+  B00110011,
+  B10000000,
+  B10000000,
+  B00000001,
+  B00000001,
+  B10000000,
+  B10000000,
+  B00110011
+};
+
+byte rahmen4[] = {
+  B10011001,
+  B10000001,
+  B00000000,
+  B00000000,
+  B10000001,
+  B10000001,
+  B00000000,
+  B01100110
+};
+
+byte smily[] = {
+  B00000000,
+  B00000000,
+  B00111100,
+  B00111100,
+  B00111100,
+  B00111100,
+  B00000000,
+  B00000000
 };
 
 void setup(){
@@ -67,36 +67,5 @@ void setup(){
 }
 
 void loop(){
-  char zeichen = leseZeichen();
-  schalteMatrixAus();
-  delay(1000);
-  Serial.println(zeichen);
-  if (zeichen == 'w') {
-    zeigeBild(up);
-  } else if (zeichen == 'a') {
-    zeigeBild(left);
-  } else if (zeichen == 'd') {
-    zeigeBild(right);
-  } else if (zeichen == 's') {
-    zeigeBild(down);
-  } else {
-    zeigeBild(smilie);
-  }
-  delay(1000);
-  //  clearMatrix();
-  //delay(1000);
-  //displayFrame(up);
-  //delay(1000);
-  //clearMatrix();
-  //delay(1000);
 
-  //int i = 1000;
-  //while(i>0){
-  //  displayFrame(smilie);
-  //  delay(i);
-  //  clearMatrix();
-  //  delay(i);
-  //  i = i * 0.9;
-  //  Serial.println(i);
-  // }
 }
