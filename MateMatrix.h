@@ -38,4 +38,8 @@ void zeigeGespeichertesBild();
  */
 char leseZeichen();
 
+void setzeGespeichertenPixel(int x, int y);
+
+void loescheGespeichertesBild();
+
 #endif

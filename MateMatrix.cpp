@@ -48,15 +48,18 @@ void initialisiereMatrix() {
   }
 }
 
+void loescheGespeichertesBild() {
+  for(int i = 0;i<8;i++) {
+    currentMatrix[i] = B00000000;
+  }
+}
+
 void schalteMatrixAus(){
   Serial.println("clearing matrix");
   for(int index=0; index < lc.getDeviceCount(); index++){
     lc.clearDisplay(index);
   }
-
-  for(int i = 0;i<8;i++) {
-    currentMatrix[i] = B00000000;
-  }
+  loescheGespeichertesBild();
 }
 
 void zeigeGespeichertesBild(){
@@ -94,6 +97,12 @@ void zeigeBild(byte columns[]){
     lc.setColumn(0, i, reverse(columns[i]));
   }
 }
+
+
+void setzeGespeichertenPixel(int x, int y) {
+  currentMatrix[y] |= B00000001 << (7-x);
+}
+
 
 char leseZeichen() {
   if (Serial.available()) {
