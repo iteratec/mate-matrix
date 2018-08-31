@@ -70,6 +70,7 @@ void loop(){
   char zeichen = leseZeichen();
   schalteMatrixAus();
   delay(1000);
+  Serial.println(zeichen);
   if (zeichen == 'w') {
     zeigeBild(up);
   } else if (zeichen == 'a') {
