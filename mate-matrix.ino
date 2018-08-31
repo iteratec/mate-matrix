@@ -6,32 +6,31 @@
 #include "MateMatrix.h"
 #include <avr/pgmspace.h>
 
-byte up2[] = {
-  B00011000,
-  B00111100,
-  B01111110,
-  B00011000,
-  B00011000,
-  B01111110,
-  B00111100,
-  B00011000
-};
-
-byte up[] = {
-  B00011000,
-  B00111100,
-  B01111110,
-  B00011000,
-  B00011000,
-  B00011000,
-  B00011000,
-  B00011000
-};
+int x = 0;
+int y = 0;
 
 void setup(){
   Serial.begin(9600); // serial communication initialize
+  initialisiereMatrix();
 }
 
 void loop(){
-
+  char c = leseZeichen();
+  if (c == 'w' && y > 0) {
+    y = y - 1;
+  }
+  if (c == 's' && y < 7) {
+    y = y + 1;
+  }
+  if (c == 'a' && x > 0) {
+    x = x - 1;
+  }
+  if (c == 'd' && x < 7) {
+    x = x + 1;
+  }
+  loescheGespeichertesBild();
+  
+  setzeGespeichertenPixel(x, y);
+  zeigeGespeichertesBild();
+  delay(50);
 }
