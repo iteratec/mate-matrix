@@ -11,8 +11,6 @@
 int dataPin = 8;    // DIN pin of MAX7219 module
 int chipSelectPin = 9;    // CS pin of MAX7219 module
 int clockPin = 10;  // CLK pin of MAX7219 module
-unsigned long framecount = 0;
-unsigned long time = millis();
 
 LedControl lc = LedControl(dataPin, clockPin, chipSelectPin, 1);
 
@@ -32,38 +30,10 @@ void schalteMatrixAus(){
   }
 }
 
-void messeFPS(){
-  framecount++;
-  unsigned long now = millis();
-  int diff = now - time;
-  if(diff > 10000){
-    int fps = framecount / (diff / 1000);
-    Serial.print("Frames per Second: ");
-    Serial.println(fps);
-    time = now;
-    framecount = 0;
-  }
-}
-
-byte reverse(byte b) {
-   b = (b & 0xF0) >> 4 | (b & 0x0F) << 4;
-   b = (b & 0xCC) >> 2 | (b & 0x33) << 2;
-   b = (b & 0xAA) >> 1 | (b & 0x55) << 1;
-   return b;
-}
-
 void zeigeBild(byte columns[]){
   Serial.println("displaying frame");
-  messeFPS();
   for(int i = 0; i<8; i++){
-    lc.setColumn(0, i, reverse(columns[i]));
+    lc.setColumn(0, i, columns[i]);
   }
-}
-
-char leseZeichen() {
-  if (Serial.available()) {
-   return Serial.read();
-  }
-  return 0;
 }
 
